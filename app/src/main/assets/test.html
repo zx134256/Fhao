@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+    <!--从assert中加载的中文网页会出现乱码，解决办法就是给html指定编码-->
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <title>
+
+    </title>
+
+
+    <script type="text/javascript">
+
+
+
+
+
+            function sum(a,b) {
+
+                <!--gygguuuiu-->
+
+                return a+b;
+
+            }
+
+
+
+
+            function alertMessage(message) {
+
+                alert(message);
+
+            }
+
+
+
+
+
+            function show(){
+
+                //显示hello world
+
+                document.getElementById("p").innerHTML="hello world";
+
+            }
+
+
+
+            function s() {
+
+
+
+                var result=window.android.getInfo();
+
+                //将返回结果显示在id为p的控件上
+
+         alert(result)
+
+                document.getElementById("p").innerHTML=result;
+
+            }
+
+function display_alert()
+  {
+  alert("I am an alert box!!")
+  }
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+这是html页面 <br/>
+
+<button onclick="s()">点击调用本地方法</button>
+
+<a href="file:///android_asset/js_java_interaction.html">点击跳转到原生页面</a>
+
+<input type="button" onclick="display_alert()"
+       value="Display alert box"/>
+
+<p id="p"></p>
+
+
+</body>
+
+</html>

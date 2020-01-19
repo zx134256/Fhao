@@ -1,0 +1,83 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "aaafc85be961e9acf173fc080e8fbe3e",
+    "entities": [
+      {
+        "tableName": "Student",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`studentId` INTEGER PRIMARY KEY AUTOINCREMENT, `s_name` TEXT NOT NULL, `s_sex` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "studentId",
+            "columnName": "studentId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "studentName",
+            "columnName": "s_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "studentSex",
+            "columnName": "s_sex",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "studentId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Teacher",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`teacherId` INTEGER PRIMARY KEY AUTOINCREMENT, `t_name` TEXT NOT NULL, `t_sex` TEXT NOT NULL, `t_year` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "teacherId",
+            "columnName": "teacherId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "teacherName",
+            "columnName": "t_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teacherSex",
+            "columnName": "t_sex",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teacherYear",
+            "columnName": "t_year",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "teacherId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"aaafc85be961e9acf173fc080e8fbe3e\")"
+    ]
+  }
+}
